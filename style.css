@@ -1,0 +1,922 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Host Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html, body{
+    width: 100%;
+    min-height: 100vh;
+    background: #241910;
+    color: #f4efe7;
+}
+
+/* ==================================================
+                    PAGE 1
+================================================== */
+
+button{
+    cursor: pointer
+}
+
+.ringBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+}
+.page1, .page2, .page3, .page4{ 
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0.5rem;
+}
+.ringLogo {
+    position: relative;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%; 
+    background: #B1A696;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ringLogo h1{
+    position: relative;
+    font-size: 3.8rem;
+    font-weight: 400;
+    color: #B1A696;
+    z-index: 1;
+}
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #f4efe7;
+    z-index: 0;
+}
+.ring {
+    position: relative;
+    width: 100%;
+    height: 100%; 
+    clip-path: circle(5%); /* CSS приховає по 33% від кожного краю елемента, залишаючи видимою лише центральну частину. Для ефекту фокусу*/
+    transition: 0.3s ease-out;
+}
+.background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 3.5rem;
+    overflow: hidden;
+}
+.background img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover ;
+}
+
+.background .top, .background .bottom{
+    position: absolute;
+    width: calc(100% - 1rem);
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.background .top {
+    top: 1.5rem;
+}
+.background .bottom{
+    left: 1rem;
+    bottom: 2rem;
+    align-items: end;
+}
+
+.top h1{
+    font-size: 12.5rem;
+    font-weight: 500;
+    line-height: 10rem;
+}
+
+.menuBtn {
+    position: relative;
+    width: 9rem;
+    height: 3.5rem;
+    padding: 1rem 1.5rem; 
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    border: none;
+}
+
+.menuBtn i{
+    position: absolute;
+    right: 0.5rem;
+    padding: 0.2rem;
+    background: #241910;
+    color: #f4efe7;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+.bottom h3{
+    font-size: 2.4rem;
+    width: 24%;
+    font-weight: 400;
+    line-height: 2.5rem;
+}
+.bottom h4{
+    width: 18rem;
+    font-size: 0.9rem;
+}
+
+/* ==================================================
+                    PAGE 2
+================================================== */
+
+.page2{
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    height: 150vh;
+}
+
+.page2 h4{
+    margin-top: 5.5rem;
+    width: 90%;
+    color: white;
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 6rem;  
+}
+
+.page2 .bottom{
+    position: absolute;
+    top: 22%;
+    left: 0;
+    width: 100%;
+    height: 20rem;
+    background: #241910;
+    opacity: 0.93;
+}
+
+
+/* ==================================================
+                    PAGE 3
+================================================== */
+
+
+.page3 {
+    padding: 3rem;
+    height: 150vh;
+}
+
+.page3 .top, .page3 .bottom{
+    width: 100%;
+}
+.page3 .top {
+    display: flex;
+    align-items: center;
+}
+
+.page3 .top .left {
+    display: flex;
+    align-items: center;
+}
+
+.page3 .top .left, .page3 .top .right{
+    width: 50%;
+    display: flex;
+}
+
+.left .imgBox {
+    width: 14rem;
+    height: 10rem;
+    overflow: hidden;
+    object-fit: contain;
+    border-radius: 110px;
+}
+
+.left .imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imgBox {
+    width: 100%;
+    height: 100%;
+}
+
+.top .right p{
+    font-size: 2.5rem;
+    color: #B1A696;
+    line-height: 2.5rem;
+}
+
+.page3 .bottom {
+    margin-top: 10rem;
+
+}
+.hideBox {
+    position: relative;
+    width: 100%;
+    overflow: hidden;  
+}
+
+.hideBox h2{
+    position: relative;
+    font-size: 11rem;
+    font-weight: 400;
+    line-height: 12rem; 
+}
+
+.hide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #241910;
+}
+
+.ability-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    gap: 10rem;
+}
+.ability-left p{
+    margin-top: 4.2rem;
+    height: 60%;
+    font-size: 1.7rem;
+    color: #B1A696;
+    line-height: 2rem;
+}
+.ability-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+.ability-right-text {
+    color: #f4efe7;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+.ability-right-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+.categories-up{
+    display: flex;
+    gap: 0.3rem;
+}
+
+.categories-down{
+    display: flex;
+    gap: 0.3rem;
+    transform: translate(-1.5rem, -0.2rem);
+}
+.categori-border {
+    width: fit-content;
+    border: 1px solid #f4efe7;
+    border-radius: 76px;
+    padding: 0.5rem 1.5rem;
+}
+
+.categori-border.dark{
+    border-color: #B1A696;
+}
+
+.categori-text.dark{
+    color: #B1A696;
+}
+
+
+.categori-text {
+    font-size: 2.3rem;
+    color: #f4efe7;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+
+
+
+/* ==================================================
+                    PAGE 4
+================================================== */
+
+
+.page4{
+    position: relative;
+    height: 130vh;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.page4 .slider{
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+} 
+
+.slider .box{
+    position: relative;
+    height: 15rem;
+    display: flex;
+    overflow: hidden;
+    min-width: calc(50rem * 5);
+}
+
+.slider .box h3{
+    font-size: 10rem;
+    width: 50rem;
+    position: absolute;
+    left: 100%;
+    animation: animate var(--time) linear infinite;
+    animation-delay: calc((var(--time) / var(--quantity) * (var(--index) - 1)) - var(--time));
+}
+
+@keyframes animate{
+    to{
+        left: -50rem;
+    }
+}
+
+.page4 .background{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 90px;
+    /* width: calc(100vw - 1rem);
+    height : calc(100vh - 1rem); */
+    width: 38rem;
+    height: 20rem;
+}
+
+.topText, .bottomText{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.bottomText{
+    top: 90%;  
+}
+
+h3, h4{
+    position: relative;
+}
+
+.topText h4{
+    font-size: 5rem;
+    font-weight: 400;
+}
+
+.topText h3{
+    font-size: 3rem;
+}
+
+.bottomText h3{
+    width: 30%;
+    font-size: 1rem;
+    margin-left: 3rem;
+    
+}
+
+.page4 .background2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    border-radius: 3.5rem ;
+    width: calc(100vw - 1rem);
+    height : calc(100vh - 1rem); 
+    overflow: hidden;
+}
+
+.background2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.3rem );
+}
+
+/* ==================================================
+                    АДАПТИВ
+================================================== */
+
+/* Стилі для планшетів (ширина екрана до 768px) */
+@media (max-width: 768px) {
+    
+    /* PAGE 1 - Головна сторінка */
+    .page1 {
+        height: 100vh;
+        padding: 0.5rem;
+    }
+    
+    .ringLogo {
+        width: 12rem;
+        height: 12rem;
+    }
+    
+    .ringLogo h1 {
+        font-size: 2.8rem;
+    }
+    
+    .top h1 {
+        font-size: 8rem;
+        line-height: 7rem;
+    }
+    
+    .menuBtn {
+        width: 3.5rem;
+        height: 3.5rem;
+        padding: 0;
+        font-size: 0; /* Приховує текст, залишає іконки */
+        justify-content: center;
+        border-radius: 50%;
+    }
+    
+    .menuBtn i {
+        position: static;
+        right: auto;
+        font-size: 1.5rem;
+    }
+    
+    .bottom h3 {
+        font-size: 1.8rem;
+        width: 40%;
+        line-height: 2rem;
+    }
+    
+    .bottom h4 {
+        width: 14rem;
+        font-size: 0.8rem;
+    }
+    
+    /* PAGE 2 - Опис */
+    .page2 {
+        padding: 2rem;
+        height: 120vh;
+    }
+    
+    .page2 h4 {
+        font-size: 4rem;
+        line-height: 4.5rem;
+        width: 95%;
+        margin-top: 3rem;
+    }
+    
+    .page2 .bottom {
+        top: 18%;
+        height: 30rem;
+    }
+    
+    /* PAGE 3 - Галерея */
+    .page3 {
+        padding: 2rem;
+        height: 130vh;
+    }
+    
+    .page3 .top {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .page3 .top .left {
+        justify-content: center;
+    }
+    
+    .page3 .top .left,
+    .page3 .top .right {
+        width: 100%;
+    }
+    
+    .left .imgBox {
+        width: 12rem;
+        height: 8rem;
+        margin-right: 1rem;
+    }
+    
+    .top .right p {
+        font-size: 2rem;
+        line-height: 2.2rem;
+        text-align: center;
+    }
+    
+    .hideBox h2 {
+        font-size: 7rem;
+        line-height: 8rem;
+    }
+    
+    /* ABILITY WRAPPER */
+    .ability-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    
+    .ability-left,
+    .ability-right {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .ability-left p {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        margin-top: 2rem;
+    }
+    
+    .ability-right-text {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .categories-up,
+    .categories-down {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .categori-border {
+        padding: 0.6rem 1rem;
+    }
+    
+    .categori-text {
+        font-size: 2.5rem;
+    }
+    
+    /* PAGE 4 - Слайдер та картинки */
+    .page4 {
+        height: 100vh; /* зберігаємо десктопну висоту */
+        padding: 0.5rem;
+    }
+    
+    /* Слайдер - зменшуємо тільки розміри */
+    .slider .box {
+        height: 12rem; /* зменшуємо з 15rem */
+    }
+    
+    .slider .box h3 {
+        font-size: 7rem; /* зменшуємо з 10rem */
+        width: 30rem; /* зменшуємо з 35rem для більш частого появлення */
+    }
+    
+    /* Background картинки - зберігаємо логіку десктопа */
+    .page4 .background {
+        width: 28rem; /* зменшуємо з 38rem */
+        height: 16rem; /* зменшуємо з 20rem */
+        /* зберігаємо position: absolute та transform */
+    }
+    
+    /* Текст на картинках */
+    .topText h4 {
+        font-size: 3.5rem; /* зменшуємо з 5rem */
+    }
+    
+    .topText h3 {
+        font-size: 2.2rem; /* зменшуємо з 3rem */
+    }
+    
+    .bottomText h3 {
+        font-size: 0.8rem; /* зменшуємо з 1rem */
+        width: 40%; /* збільшуємо з 30% */
+        margin-left: 2rem; /* зменшуємо з 3rem */
+    }
+    
+    .bottomText h3 {
+        font-size: 1.1rem; /* зменшуємо з 1rem */
+        width: 40%; /* збільшуємо з 30% */
+        margin-left: 2rem; /* зменшуємо з 3rem */
+    }
+    /* Background2 - зберігаємо логіку анімації */
+    .page4 .background2 {
+        /* Зберігаємо всі оригінальні стилі для анімації */
+        width: 100vw;
+        height: 112vh;
+        
+    }
+}
+
+
+
+/* Стилі для мобільних телефонів (ширина екрана до 480px) */
+@media (max-width: 480px) {
+    
+    /* PAGE 1 - Головна сторінка */
+    .page1 {
+        height: 100vh;
+        padding: 0.3rem;
+    }
+    
+    .ringLogo {
+        width: 8rem;
+        height: 8rem;
+    }
+    
+    .ringLogo h1 {
+        font-size: 1.8rem;
+    }
+    .top{
+        align-items: center;
+    }
+    
+    .top h1 {
+        margin-top: 10rem;
+        font-size: 9rem;
+        line-height: 4rem;
+    }
+    .menuBtn {
+        width: 3rem;
+        height: 3rem;
+        padding: 0;
+        font-size: 0;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    
+    .menuBtn i {
+        position: static;
+        right: auto;
+        font-size: 3rem;
+    }
+    
+    .bottom h3 {
+        font-size: 1.3rem;
+        width: 40%; /* зменшуємо з 50% */
+        line-height: 1.5rem;
+    }
+    
+    .bottom h4 {
+        width: 8rem; /* зменшуємо з 10rem */
+        font-size: 0.6rem; /* зменшуємо шрифт */
+    }
+    
+    /* PAGE 2 - Опис */
+    .page2 {
+        padding: 1rem;
+        height: 100vh;
+    }
+    
+    .page2 h4 {
+        font-size: 2.6rem;
+        line-height: 3rem;
+        width: 100%;
+        margin-top: 2rem;
+    }
+    
+    .page2 .bottom {
+        top: 12%;
+        height: 30rem;
+    }
+    
+    /* PAGE 3 - Галерея (колонковий лейаут) */
+    .page3 {
+        padding: -1rem; /* зберігаю 8rem padding */
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .page3 .top {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    /* Перша колонка - зображення (одне під одним, великі розміри) */
+    .page3 .top .left {
+        display: flex;
+        flex-direction: column; /* змінюю на вертикальне розташування */
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem; /* збільшую відстань між картинками */
+        width: 100%;
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left .imgBox {
+        width: 15rem; /* збільшую з 5rem для хорошого розміру */
+        height: 10rem; /* збільшую з 3.5rem для хорошого розміру */
+        overflow: hidden;
+        object-fit: contain;
+        border-radius: 110px;
+        margin: 0;
+    }
+
+    .left .imgBox img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .imgBox {
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Друга колонка - опис */
+    .page3 .top .right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .top .right p {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        text-align: center;
+        max-width: 80%; /* обмежую ширину для кращого читання */
+    }
+    
+    /* Третя колонка - заголовки "Choose the one you like best" */
+    .page3 .bottom {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .hideBox {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .hideBox h2 {
+        font-size: 2.5rem; /* зменшую для колонкового лейауту */
+        line-height: 2.8rem;
+        text-align: center;
+        margin: 0;
+    }
+    
+    /* Четверта колонка - ABILITY WRAPPER (колонковий лейаут) */
+    .ability-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.5rem;
+        margin-top: 1rem;
+    }
+    
+    /* Перша підколонка - описовий текст */
+    .ability-left {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .ability-left p {
+        font-size: 0.9rem;
+        line-height: 1.1rem;
+        margin: 0;
+    }
+    
+    /* Друга підколонка - заголовок категорій */
+    .ability-right {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .ability-right-text {
+        font-size: 0.5rem;
+        margin: 1rem 0;
+    }
+    
+    /* Третя підколонка - категорії (великі колонки, одна під одною) */
+    .ability-right-categories {
+        display: flex;
+        flex-direction: column;
+        white-space: nowrap;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    /* Кожна категорія - окрема велика колонка */
+    .categori-border {
+        width: 100%; /* займає 80% ширини для хорошого розміру */
+        padding: 1.2rem 2rem;
+        text-align: center;
+        border: 1px solid #f4efe7;
+        border-radius: 76px;
+        margin-bottom: 0.8rem; /* відстань між категоріями */
+    }
+    
+    .categori-text {
+        font-size: 1.4rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    
+    /* Прибираю старі стилі categories-up та categories-down */
+    .categories-up,
+    .categories-down {
+        display: flex;
+        flex-direction: column; /* тепер вертикально */
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+    .categories-down{
+        display: flex;
+        transform: translate(0, 0);
+    }
+    
+    /* PAGE 4 - Слайдер та картинки (зберігаємо логіку десктопа) */
+    .page4 {
+        height: 100vh;
+        padding: 0.3rem;
+    }
+    
+    /* Слайдер - зменшуємо для мобільних */
+    .slider .box {
+        height: 5rem;
+    }
+    
+    .slider .box h3 {
+        font-size: 3rem;
+        width: 15rem; /* зменшуємо з 20rem для більш частого появлення */
+    }
+    
+    /* Background картинки - зберігаємо логіку десктопа */
+    .page4 .background {
+        width: 18rem;
+        height: 10rem;
+    }
+    
+    /* Текст на картинках */
+    .topText h4 {
+        font-size: 2.8rem;
+        line-height: 1.8rem;
+        text-align: center;
+    }
+    
+    .topText h3 {
+        font-size: 1.6rem;
+    }
+    
+    .bottomText h3 {
+        font-size: 1rem;
+        width: 60%;
+        margin-left: 1rem;
+    }
+    
+    /* Background2 - зберігаємо логіку анімації */
+    .page4 .background2 {
+        width: calc(100vw - 0.5rem);
+        height: calc(100vh + 3rem);
+        /* position: absolute, transform: translate(-50%, 100%) залишаємо */
+    }
+}
+    /* Background2 - зберігаємо логіку анімації */
+    .page4 .background2 {
+        /* Зберігаємо всі оригінальні стилі для анімації */
+        width: 100vw;
+        height: 112vh;
+        
+    }
+
+
