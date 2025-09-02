@@ -154,6 +154,7 @@ button{
     display: flex;
     align-items: center;
     height: 150vh;
+    overflow: hidden; /* обмежуємо затемнювач межами секції */
 }
 
 .page2 h4{
@@ -167,7 +168,7 @@ button{
 
 .page2 .bottom{
     position: absolute;
-    top: 22%;
+    top: 24%;
     left: 0;
     width: 100%;
     height: 24rem;
@@ -392,7 +393,7 @@ button{
 }
 
 .bottomText{
-    top: 90%;  
+    top: 80%;  /* підіймаємо опис трохи вище, щоб не зникав за нижнім краєм */
 }
 
 h3, h4{
@@ -430,12 +431,50 @@ h3, h4{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.3rem );
+    transform: scale(1.3);
 }
 
 /* ==================================================
                     АДАПТИВ
 ================================================== */
+
+/* Стилі для планшетів-l (ширина екрана до 1024px) */
+@media (max-width: 1024px) {
+    /* PAGE 2: робимо видиме плавне відкривання, НЕ прилипаємо донизу */
+    .page2 .bottom {
+        top: 12%; /* початок як у початковому макеті для 1024px */
+        bottom: 0; /* прилипання до низу */
+        height: auto; /* керується bottom */
+        z-index: 2; /* поверх тексту */
+    }
+
+    /* PAGE 3: ліва й права частини стають у стовпчик */
+    .page3 .top {
+        flex-direction: column; /* переносимо блоки один під інший */
+        gap: 2rem;
+    }
+    .page3 .top .left,
+    .page3 .top .right {
+        width: 100%; /* кожен блок на всю ширину */
+    }
+    .page3 .top .left { justify-content: center; }
+    .top .right p { text-align: center; }
+
+    /* ABILITY WRAPPER: робимо весь блок у колонку і стискаємо проміжки */
+    .ability-wrapper {
+        flex-direction: column; /* ставимо весь блок у колонку */
+        align-items: center;
+        gap: 1.2rem;
+        padding: 1.5rem 2rem;
+    }
+    .ability-left,
+    .ability-right {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+}
 
 /* Стилі для планшетів (ширина екрана до 768px) */
 @media (max-width: 768px) {
@@ -501,7 +540,8 @@ h3, h4{
     
     .page2 .bottom {
         top: 18%;
-        height: 30rem;
+        bottom: 0; /* тягнемо затемнення донизу екрана на планшеті */
+        height: auto; /* прибираємо фіксовану висоту, щоб працював bottom */
     }
     
     /* PAGE 3 - Галерея */
@@ -544,7 +584,7 @@ h3, h4{
     /* ABILITY WRAPPER */
     .ability-wrapper {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.2rem; /* зменшую відступи між текстом і категоріями */
         padding: 2rem;
     }
     
@@ -563,29 +603,34 @@ h3, h4{
     }
     
     .ability-right-text {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
+        font-size: 2rem; /* трішки більший заголовок */
+        margin-bottom: 1rem;
     }
     
     .categories-up,
     .categories-down {
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* дозволяємо перенос у кілька рядків */
         justify-content: center;
-        gap: 0.5rem;
+        gap: 0.4rem; /* менший проміжок між чипами */
+    }
+    /* Виправлення зсуву, що міг накладатися на page4 */
+    .categories-down{
+        transform: translate(0, 0);
     }
     
     .categori-border {
-        padding: 0.6rem 1rem;
+        padding: 0.9rem 1.6rem; /* робимо чипи більшими */
     }
     
     .categori-text {
-        font-size: 2.5rem;
+        font-size: 2.8rem; /* більший текст на планшеті */
     }
     
     /* PAGE 4 - Слайдер та картинки */
     .page4 {
-        height: 100vh; /* зберігаємо десктопну висоту */
-        padding: 0.5rem;
+        height: 110vh; /* трохи більше простору */
+        padding: 1rem;
+        margin-top: 3rem; /* менший відступ, ближче до категорій */
     }
     
     /* Слайдер - зменшуємо тільки розміри */
@@ -600,9 +645,8 @@ h3, h4{
     
     /* Background картинки - зберігаємо логіку десктопа */
     .page4 .background {
-        width: 28rem; /* зменшуємо з 38rem */
-        height: 16rem; /* зменшуємо з 20rem */
-        /* зберігаємо position: absolute та transform */
+        width: 80vw; /* адаптивно замість фіксованих rem */
+        height: 45vw; /* збереження співвідношення */
     }
     
     /* Текст на картинках */
@@ -630,7 +674,6 @@ h3, h4{
         /* Зберігаємо всі оригінальні стилі для анімації */
         width: 100vw;
         height: 112vh;
-        
     }
 }
 
@@ -717,11 +760,13 @@ h3, h4{
     
     /* PAGE 3 - Галерея (колонковий лейаут) */
     .page3 {
-        padding: -1rem; /* зберігаю 8rem padding */
-        height: 100vh;
+        padding: 1rem; /* виправлено негативний padding */
+        height: 105vh;
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        padding-bottom: 3rem;
+        margin-bottom: 3rem; /* додано відступ перед page4 */
     }
     
     .page3 .top {
@@ -828,6 +873,7 @@ h3, h4{
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        padding-bottom: 9rem;
     }
     
     .ability-right-text {
@@ -876,8 +922,9 @@ h3, h4{
     
     /* PAGE 4 - Слайдер та картинки (фікс для мобільних) */
     .page4 {
-        height: 130vh; /* повертаю оригінальну висоту для анімації */
-        padding: 0.5rem;
+        height: 120vh; /* трохи нижче, щоб не налазило */
+        padding: 0.8rem;
+        margin-top: 6rem; /* збільшений відступ від page3 */
         position: relative;
         display: flex;
         justify-content: center;
@@ -897,13 +944,13 @@ h3, h4{
     
     /* Background картинки - зберігаю оригінальні стилі для анімації */
     .page4 .background {
-        width: 38rem;
-        height: 20rem;
+        width: 90vw; /* не виходить за межі екрана */
+        height: 52vw; /* співвідношення для мобільних */
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        border-radius: 90px;
+        border-radius: 24px;
     }
     
     /* Текст на картинках - масштабую для мобільних */
@@ -918,8 +965,8 @@ h3, h4{
     }
     
     .bottomText h3 {
-        font-size: 0.8rem;
-        width: 70%;
+        font-size: 0.9rem;
+        width: 85%;
         margin-left: 0.5rem;
     }
     
@@ -929,7 +976,7 @@ h3, h4{
         top: 50%;
         left: 50%;
         transform: translate(-50%, 100%); /* повертаю оригінальний трансформ */
-        border-radius: 3.5rem;
+        border-radius: 24px;
         width: calc(100vw - 1rem);
         height: calc(100vh - 1rem);
         overflow: hidden;
